@@ -19,11 +19,11 @@ class Queue {
     }
 
     peek = () => {
-        return this.queue[this.length - 1]
+        return this.queue[0]
     }
 
     dequeue = () => {
-        delete this.queue[this.length - 1]
+        delete this.queue[0]
         this.length--
     }
 
