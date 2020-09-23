@@ -17,8 +17,12 @@ class Stack {
     }
 
     pop = () => {
-        delete this.stack[this.length - 1]
-        this.length--
+        if(this.length > 0){
+            this.length--
+            return delete this.stack[this.length ]
+        } else {
+            return null
+        }
     }
 
     peek = () => {
@@ -53,4 +57,4 @@ class Stack {
 // console.log(myStack.isEmpty()) //true
 
 /* Do not remove the exports below */
-//module.exports = Stack
+module.exports = Stack

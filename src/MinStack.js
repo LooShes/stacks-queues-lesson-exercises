@@ -1,5 +1,5 @@
 
-//module.require(Stack)
+const Stack = require('./Stack')
 
 /* Write your class below */
 class MinStack {
@@ -25,10 +25,11 @@ class MinStack {
         if(this.stack.isEmpty()){
             return null
         } else {
-            if(this.stack.pop() === this.minValue.peek()){
+            if(this.stack.peek() === this.minValue.peek()){
                 this.minValue.pop()
             }
         } 
+         return this.stack.pop()
     }
 
     peek = () => {
@@ -56,7 +57,6 @@ ms.push(31)
 ms.print()
 console.log(ms.getMin())    //12
 ms.pop()
-ms.print()
 ms.pop()
 ms.pop()
 console.log(ms.getMin())    //null
@@ -70,4 +70,4 @@ ms.pop()
 console.log(ms.getMin())    //19
 
 /* Do not remove the exports below */
-//module.exports = MinStack
+module.exports = MinStack
